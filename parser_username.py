@@ -20,9 +20,3 @@ def count_users(resp):
 not_sorted_names = Counter(count_users(response))
 sorted_names = dict(sorted(not_sorted_names.items(), key=lambda x: (-x[1], x[0])))
 print(sorted_names)
-
-
-
-
-
-
