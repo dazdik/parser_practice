@@ -1,8 +1,6 @@
 import lxml
-from bs4 import BeautifulSoup
-
 import requests
-
+from bs4 import BeautifulSoup
 
 url = 'https://parsinger.ru/4.3/5/index.html'
 

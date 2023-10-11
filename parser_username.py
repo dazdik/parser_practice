@@ -2,7 +2,6 @@ from collections import Counter
 
 import requests
 
-
 response = requests.get('https://parsinger.ru/3.4/3/dialog.json').json()
 
 list_usernames = []
