@@ -1,5 +1,5 @@
-import requests
 import lxml
+import requests
 from bs4 import BeautifulSoup
 
 
@@ -14,7 +14,7 @@ def get_all_pages() -> list:
     return all_pages
 
 
-def get_items()-> list:
+def get_items() -> list:
     """
     Получение карточек товара с каждой страницы пагинации.
     """
