@@ -1,7 +1,7 @@
-from fake_useragent import UserAgent
 from random import randint
 
 import requests
+from fake_useragent import UserAgent
 
 ua = UserAgent(min_percentage=1.3)
 
