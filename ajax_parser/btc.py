@@ -1,13 +1,12 @@
-from random import choice
+from fake_useragent import UserAgent
+from random import randint
 
 import requests
 
-file_path = '../user_agent.txt'
-with open(file_path, 'r') as file:
-    proxys = file.read().split('\n')
+ua = UserAgent(min_percentage=1.3)
 
 headers = {
-    'user-agent': choice(proxys),
+    'user-agent': ua.random,
     'x-requested-with': 'XMLHttpRequest'
 }
 
