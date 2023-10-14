@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 url = 'https://parsinger.ru/4.8/7/index.html'
 response = requests.get(url=url)
 response.encoding = 'utf-8'
