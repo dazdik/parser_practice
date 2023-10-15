@@ -7,9 +7,9 @@ selected_columns = ['Марка Авто', 'Год выпуска', 'Тип дв
 df = data[0].sort_values(by='Стоимость авто')[selected_columns]
 
 # фильтрация авто по стоимости, году выпуска и типу двигателя,
-filtered_df = df.loc[(df['Стоимость авто'] <= 4000000)
-                     & (df['Год выпуска'] >= 2005)
-                     & (df['Тип двигателя'] == 'Бензиновый')]
+filtered_df = df.loc[(df['Стоимость авто'] <= 4000000) &
+                     (df['Год выпуска'] >= 2005) &
+                     (df['Тип двигателя'] == 'Бензиновый')]
 
 # вывод данных в формате json
 json_data = filtered_df.to_json(orient='records', force_ascii=False, indent=4)
