@@ -25,7 +25,7 @@ def get_item_links() -> list:
     return links
 
 
-def get_data() -> tuple[list, list, list, list, list, list, list]:
+def get_data() -> tuple[list, ...]:
     headers = []
     articles = []
     descriptions = []
@@ -52,7 +52,7 @@ with open('watch.csv', 'a', encoding='utf-8-sig', newline='') as file:
     writer = csv.writer(file, delimiter=';')
     headers, articles, descriptions, in_stock, prices, old_prices, urls = get_data()
     for item, article, descr, stock, price, old_price, url in zip(
-            headers, articles, descriptions, in_stock, prices, old_prices, urls):
+            get_data()):
 
         # Формируем строку для записи
         flatten = item, article, *[x.split(':')[1].strip() for x in descr if x], stock, price, old_price, url
