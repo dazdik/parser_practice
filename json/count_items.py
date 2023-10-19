@@ -12,6 +12,6 @@ res = defaultdict(int)
 
 for item in response:
     name_category = item.get('categories')
-    res[name_category] += int(item['count'])
+    res[name_category] += (int(item['count']) * int(item['price'].split()[0]))
 
 print(dict(res))
