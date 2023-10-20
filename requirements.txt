@@ -14,3 +14,4 @@ textblob==0.17.1
 selenium-wire==5.1.0
 
 python-dotenv==1.0.0
+Faker==19.11.0
