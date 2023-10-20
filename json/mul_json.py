@@ -3,7 +3,6 @@ from collections import defaultdict
 import requests
 from fake_useragent import UserAgent
 
-
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
 url = 'https://parsinger.ru/4.6/1/res.json'
