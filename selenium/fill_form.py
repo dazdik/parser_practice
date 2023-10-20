@@ -26,7 +26,7 @@ info = [fake.first_name_male(), fake.last_name_male(),
         fake.city_name(), fake.email()
         ]
 
-with webdriver.Chrome(options=chrome_options) as browser:
+with webdriver.Chrome(options=chrome_options, seleniumwire_options=seleniumwire_options) as browser:
     browser.get('https://parsinger.ru/selenium/1/1.html')
     fields = browser.find_elements(By.CLASS_NAME, 'form')
 
