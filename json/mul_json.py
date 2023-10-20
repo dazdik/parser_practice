@@ -15,7 +15,3 @@ for item in response:
     res[name_category] += (int(item['article']) * int(item['description']['rating']))
 
 print(dict(res))
-
-
-
-

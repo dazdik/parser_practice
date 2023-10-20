@@ -11,3 +11,6 @@ pandas==2.1.1
 selenium==4.14.0
 webdriver_manager==4.0.1
 textblob==0.17.1
+selenium-wire==5.1.0
+
+python-dotenv==1.0.0
