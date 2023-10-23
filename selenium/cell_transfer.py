@@ -20,5 +20,5 @@ for parent in parents:
     color[0].clear()
     color[1].send_keys(number)
     parent.find_element(By.TAG_NAME, 'button').click()
-    time.sleep(2)
+time.sleep(2)
 browser.quit()
