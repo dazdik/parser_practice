@@ -1,24 +1,19 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-browser = webdriver.Chrome()
-
-browser.get("https://parsinger.ru/selenium/5.5/4/1.html")
-time.sleep(2)
+selector = By.CSS_SELECTOR
 
 
-# Находим все родительские элементы
-parents = browser.find_elements(By.CLASS_NAME, 'parent')
+def read_clean(elem):
+    (a := elem).clear()
+    return a.text
 
-# Проходимся по каждому родительскому элементу
-for parent in parents:
-    # Находим textarea и checkbox внутри родительского элемента
-    color = parent.find_elements(By.TAG_NAME, 'textarea')
-    number = color[0].text
-    color[0].clear()
-    color[1].send_keys(number)
-    parent.find_element(By.TAG_NAME, 'button').click()
-time.sleep(2)
-browser.quit()
+
+with webdriver.Chrome() as browser:
+    browser.get('https://parsinger.ru/selenium/5.5/4/1.html')
+    for i in browser.find_elements(selector, '.parent'):
+        gray, blue, button = i.find_elements(selector, 'textarea[color="gray"], textarea[color="blue"], button')
+        blue.send_keys(read_clean(gray))
+        button.click()
+    browser.find_element(selector, 'button#checkAll').click()
+    print(browser.find_element(selector, '#congrats').text)
