@@ -1,5 +1,6 @@
 import time
 from pprint import pprint
+
 from selenium import webdriver
 
 cookie_dict = {
